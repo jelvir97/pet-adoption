@@ -2,6 +2,7 @@ from flask import Flask, request,render_template, redirect,flash,session
 from flask_debugtoolbar import DebugToolbarExtension
 from models import db, connect_db, Pet
 from sqlalchemy import Text, text
+from forms import AddPet
 
 app = Flask(__name__)
 
@@ -19,3 +20,8 @@ connect_db(app)
 def hi():
     pets = Pet.query.all()
     return render_template('home.html', pets=pets)
+
+@app.route('/pets/new')
+def new_pet():
+    form = AddPet()
+    return render_template('add_pet.html',form=form)

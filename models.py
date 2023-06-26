@@ -8,6 +8,7 @@ def connect_db(app):
     db.init_app(app)
 
 class Pet(db.Model):
+    """Defines Pet table"""
     __tablename__ = "pets"
 
     def __repr__(self):

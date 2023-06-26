@@ -22,7 +22,7 @@ def hi():
     return render_template('home.html', pets=pets)
 
 @app.route('/add', methods=["GET","POST"])
-def new_pet():
+def add_new_pet():
     """Renders add pet form and Handles POST request"""
     form = AddPet()
     

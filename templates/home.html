@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Pet Adoption - Home{% endblock %}
+
+{% block content %}
+    <h1>Adopt-A-Pet</h1>
+    {% for pet in pets %}
+        <div>
+            <img src="{{pet.photo_url}}" alt="" style="display: inline; width: 120px;">
+            <div style="display: inline-block;">
+                <h3>{{pet.name}}</h3>
+                <ul>
+                <li>Species: {{pet.species}}</li>
+                <li>Age: {{pet.age}}</li>
+                <li>{% if pet.available %}
+                    <b>Available</b>
+                    {% else %}
+                    Unavailable
+                    {% endif %}
+                    </li>
+                </ul>   
+            </div>
+            <div style="display: inline-block;">
+                <h4>Additional notes</h4>
+                <p>{{pet.notes}}</p>
+            </div>
+            
+            <hr>
+        </div>
+    {% endfor %}
+{% endblock %}

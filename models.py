@@ -23,7 +23,7 @@ class Pet(db.Model):
     species = db.Column(db.Text,
                         nullable=False)
     
-    photo_url = db.Column(db.Text)
+    photo_url = db.Column(db.Text, default = 'https://pyxis.nymag.com/v1/imgs/0d8/a7e/a7e45af36625b8900e63c51d0ec925749c-over-the-garden-wall.rsquare.w700.jpg')
 
     age = db.Column(db.Integer)
 
